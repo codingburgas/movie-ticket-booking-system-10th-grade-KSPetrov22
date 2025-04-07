@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="MovieTicketSystem.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Seats.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Seats.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

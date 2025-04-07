@@ -1,12 +1,7 @@
-#include <iostream>
-#include <string>
-
-struct seats {
-	int row;
-	bool isReserved;
-};
+#include "Seats.h"
 
 void showSeats(seats seat[10][10]) {
+	system("cls");
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 10; j++) {
 			std::cout << "Seat (" << i + 1 << " column / " << j + 1 << " row) - ";
@@ -36,27 +31,4 @@ void reserveSeat(seats seat[10][10], int column, int row) {
 			break;
 		}
 	}
-}
-
-int main() {
-
-	seats seat[10][10];
-	for (int i = 0; i < 10; i++) {
-		for (int j = 0; j < 10; j++) {
-			seat[i][j].row = i + 1;
-			if (i % 2 == 0)
-				seat[i][j].isReserved = true;
-			else
-				seat[i][j].isReserved = false;
-		}
-	}
-
-	showSeats(seat);
-
-	int column, row;
-	std::cout << "Enter the column and row to reserve a seat: ";
-	std::cin >> column >> row;
-	reserveSeat(seat, column, row);
-
-	showSeats(seat);
 }
