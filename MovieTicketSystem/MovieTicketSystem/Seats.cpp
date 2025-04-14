@@ -1,18 +1,5 @@
 #include "Seats.h"
 
-void showSeats(seats seat[10][10]) {
-	system("cls");
-	for (int i = 0; i < 10; i++) {
-		for (int j = 0; j < 10; j++) {
-			std::cout << "Seat (" << i + 1 << " column / " << j + 1 << " row) - ";
-			std::cout << (seat[i][j].isReserved ? "Occupied" : "Available") << "\t";
-			if ((j + 1) % 5 == 0) {
-				std::cout << std::endl;
-			}
-		}
-		std::cout << std::endl;
-	}
-}
 
 void reserveSeat(seats seat[10][10], int column, int row) {
 	while (true) {

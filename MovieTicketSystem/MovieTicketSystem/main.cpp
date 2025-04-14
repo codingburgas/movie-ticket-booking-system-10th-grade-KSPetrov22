@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Seats.h"
+#include "../MovieTicketLibrary/SeatsUtil.h"
 
 int main() {
     seats seat[10][10];
@@ -13,13 +14,16 @@ int main() {
                 seat[i][j].isReserved = false;
         }
     }
+    while (true) {
+        std::cout << "Select row of seats to show (1-10)\n";
+        int selectedRow;
+        std::cin >> selectedRow;
+        showSeatsByIndex(seat, selectedRow);    
 
-    showSeats(seat);
+        int column, row;
+        std::cout << "Enter the column and row to reserve a seat: ";
+        std::cin >> column >> row;
+        reserveSeat(seat, column, row);
 
-    int column, row;
-    std::cout << "Enter the column and row to reserve a seat: ";
-    std::cin >> column >> row;
-    reserveSeat(seat, column, row);
-
-    showSeats(seat);
+    }
 }
