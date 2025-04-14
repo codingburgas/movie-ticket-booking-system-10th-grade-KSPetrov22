@@ -1,21 +1,23 @@
 #include "Seats.h"
 
-
-void reserveSeat(seats seat[10][10], int column, int row) {
-	while (true) {
-		if (column < 1 || column > 10 || row < 1 || row > 10) {
-			std::cout << "Invalid seat number. Please enter a valid column and row: ";
-			std::cin >> column >> row;
-			continue;
-		}
-		if (seat[column - 1][row - 1].isReserved) {
-			std::cout << "Seat is already reserved. Please choose another seat: ";
-			std::cin >> column >> row;
-		}
-		else {
-			seat[column - 1][row - 1].isReserved = true;
-			std::cout << "Seat (" << column << " column / " << row << " row) reserved successfully.\n" << std::endl;
-			break;
-		}
-	}
+void seatsView(seats seat[10][10]) {
+    showSeatsByIndex(seat, 0);
+    int selectedCol;
+    while (true) {
+        std::cout << "Would you like to view different column [1] or book a seat [2]?\n";
+        int choice;
+        std::cin >> choice;
+        if (choice == 1) {
+            std::cout << "Select which column you'd like to view [1-10]\n";
+            std::cin >> selectedCol;
+            selectedCol -= 1;
+            showSeatsByIndex(seat, selectedCol);
+        }
+        if (choice == 2) {
+            int column, row;
+            std::cout << "Enter the column and row to reserve a seat: ";
+            std::cin >> column >> row;
+            reserveSeat(seat, column, row);
+        }
+    }
 }

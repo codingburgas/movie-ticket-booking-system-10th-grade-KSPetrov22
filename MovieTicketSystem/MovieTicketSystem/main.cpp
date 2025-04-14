@@ -14,16 +14,5 @@ int main() {
                 seat[i][j].isReserved = false;
         }
     }
-    while (true) {
-        std::cout << "Select row of seats to show (1-10)\n";
-        int selectedRow;
-        std::cin >> selectedRow;
-        showSeatsByIndex(seat, selectedRow);    
-
-        int column, row;
-        std::cout << "Enter the column and row to reserve a seat: ";
-        std::cin >> column >> row;
-        reserveSeat(seat, column, row);
-
-    }
-}
+    seatsView(seat);
+ }

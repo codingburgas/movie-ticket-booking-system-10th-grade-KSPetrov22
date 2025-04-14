@@ -1,9 +1,5 @@
 #pragma once
 #include <iostream>
+#include "../MovieTicketLibrary/SeatsUtil.h"
 
-struct seats {
-	int row;
-	bool isReserved;
-};
-
-void reserveSeat(seats seat[10][10], int column, int row);
+void seatsView(seats seat[10][10]);

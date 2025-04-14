@@ -1,4 +1,11 @@
 #pragma once
 #include <iostream>
 
-void showSeatsByIndex(int seats[10][10], int index);
+struct seats {
+	int row;
+	bool isReserved;
+};
+
+void showSeatsByIndex(seats seats[10][10], int index);
+
+void reserveSeat(seats seat[10][10], int column, int row);
