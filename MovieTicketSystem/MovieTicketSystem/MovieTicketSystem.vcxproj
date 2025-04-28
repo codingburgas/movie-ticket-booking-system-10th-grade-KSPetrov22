@@ -128,9 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menus.cpp" />
     <ClCompile Include="Seats.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Menus.h" />
     <ClInclude Include="Seats.h" />
   </ItemGroup>
   <ItemGroup>
