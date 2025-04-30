@@ -5,6 +5,5 @@
 #include "../MovieTicketLibrary/SeatsUtil.h"
 
 int main(){
-    seats seat[10][10];
     showMainMenu();
  }
