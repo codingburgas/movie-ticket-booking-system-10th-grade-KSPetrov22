@@ -23,9 +23,13 @@ void showMainMenu() {
     if (choice == '1') {
         ViewGenres();
     }
+    else {
+        exit;
+    }
 }
 
 void ActionMovies() {
+    system("cls");
     std::cout << "Choose an action movie:\n";
     std::cout << "The Matrix [1]\n";
     std::cout << "Mission: Impossible [2]\n";

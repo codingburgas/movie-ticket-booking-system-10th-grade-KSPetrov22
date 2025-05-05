@@ -1,10 +1,11 @@
 #include "Seats.h"
+#include "Menus.h"
 
 void seatsView(seats seat[10][10]) {
     showSeatsByIndex(seat, 0);
     int selectedCol;
     while (true) {
-        std::cout << "Would you like to view different column [1] or book a seat [2]?\n";
+        std::cout << "Would you like to view different column [1], book a seat [2] or go back [3]?\n";
         int choice;
         std::cin >> choice;
         if (choice == 1) {
@@ -18,6 +19,9 @@ void seatsView(seats seat[10][10]) {
             std::cout << "Enter the column and row to reserve a seat: ";
             std::cin >> column >> row;
             reserveSeat(seat, column, row);
+        }
+        if (choice == 3) {
+            showMainMenu();
         }
     }
 }
