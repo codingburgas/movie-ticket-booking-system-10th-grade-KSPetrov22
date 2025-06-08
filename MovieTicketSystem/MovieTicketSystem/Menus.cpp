@@ -1,30 +1,31 @@
 #include "Menus.h"
+#include "../MovieTicketLibrary/SeatsUtil.h"
 #include "Seats.h"
 
-seats seat[10][10]{};
-    
+Seats seat[10][10]{};
+
 void showMainMenu() {
     system("cls");
     for (int i = 0; i < 10; i++) {
-
         for (int j = 0; j < 10; j++) {
-            seat[i][j].row = i + 1;
+            seat[i][j].setRow(i + 1);
             if (i % 2 == 0)
-                seat[i][j].isReserved = true;
-            else
-                seat[i][j].isReserved = false;
+                seat[i][j].reserve();  // Reserve if even row
         }
     }
+
     std::cout << "Choose what you want to do!\n";
     std::cout << "[1] View movie genres\n";
     std::cout << "[2] Exit\n";
+
     char choice;
     std::cin >> choice;
+
     if (choice == '1') {
         ViewGenres();
     }
     else {
-        exit;
+        exit(0);
     }
 }
 
@@ -33,18 +34,14 @@ void ActionMovies() {
     std::cout << "Choose an action movie:\n";
     std::cout << "The Matrix [1]\n";
     std::cout << "Mission: Impossible [2]\n";
-    std::cout << "Terminator 2: Judgement day [3]\n";
+    std::cout << "Terminator 2: Judgement Day [3]\n";
     std::cout << "Go back [4]\n";
+
     int choice;
     std::cin >> choice;
-    switch (choice)
-    {
+    switch (choice) {
     case 1:
-        seatsView(seat);
-        break;
     case 2:
-        seatsView(seat);
-        break;
     case 3:
         seatsView(seat);
         break;
@@ -52,27 +49,24 @@ void ActionMovies() {
         ViewGenres();
         break;
     default:
+        std::cout << "Invalid choice.\n";
         break;
     }
 }
 
 void AnimationMovies() {
     system("cls");
-    std::cout << "Choose an action movie:\n";
+    std::cout << "Choose an animation movie:\n";
     std::cout << "Toy Story 3 [1]\n";
-    std::cout << "Spiderman Across The Spiderverse [2]\n";
+    std::cout << "Spiderman: Across the Spider-Verse [2]\n";
     std::cout << "Sonic Movie 3 [3]\n";
     std::cout << "Go back [4]\n";
+
     int choice;
     std::cin >> choice;
-    switch (choice)
-    {
+    switch (choice) {
     case 1:
-        seatsView(seat);
-        break;
     case 2:
-        seatsView(seat);
-        break;
     case 3:
         seatsView(seat);
         break;
@@ -80,27 +74,24 @@ void AnimationMovies() {
         ViewGenres();
         break;
     default:
+        std::cout << "Invalid choice.\n";
         break;
     }
 }
 
 void RomanceMovies() {
     system("cls");
-    std::cout << "Choose an action movie:\n";
+    std::cout << "Choose a romance movie:\n";
     std::cout << "The Notebook [1]\n";
     std::cout << "Pride and Prejudice [2]\n";
     std::cout << "La La Land [3]\n";
     std::cout << "Go back [4]\n";
+
     int choice;
     std::cin >> choice;
-    switch (choice)
-    {
+    switch (choice) {
     case 1:
-        seatsView(seat);
-        break;
     case 2:
-        seatsView(seat);
-        break;
     case 3:
         seatsView(seat);
         break;
@@ -108,6 +99,7 @@ void RomanceMovies() {
         ViewGenres();
         break;
     default:
+        std::cout << "Invalid choice.\n";
         break;
     }
 }
@@ -116,13 +108,13 @@ void ViewGenres() {
     system("cls");
     std::cout << "Choose a genre:\n";
     std::cout << "Action [1]\n";
-    std::cout << "Animantion [2]\n";
+    std::cout << "Animation [2]\n";  // Fixed spelling
     std::cout << "Romance [3]\n";
     std::cout << "Go back [4]\n";
+
     int choice;
     std::cin >> choice;
-    switch (choice)
-    {
+    switch (choice) {
     case 1:
         ActionMovies();
         break;
@@ -136,7 +128,7 @@ void ViewGenres() {
         showMainMenu();
         break;
     default:
+        std::cout << "Invalid choice.\n";
         break;
     }
 }
-

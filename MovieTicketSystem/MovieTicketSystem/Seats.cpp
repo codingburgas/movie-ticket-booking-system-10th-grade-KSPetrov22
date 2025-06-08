@@ -1,7 +1,7 @@
 #include "Seats.h"
 #include "Menus.h"
 
-void seatsView(seats seat[10][10]) {
+void seatsView(Seats seat[10][10]) {
     showSeatsByIndex(seat, 0);
     int selectedCol;
     while (true) {
