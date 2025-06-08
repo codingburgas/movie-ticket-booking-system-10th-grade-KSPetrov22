@@ -18,9 +18,15 @@
     <ClCompile Include="SeatUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SeatValues.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SeatsUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SeatValues.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

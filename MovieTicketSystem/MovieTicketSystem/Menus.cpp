@@ -1,18 +1,12 @@
 #include "Menus.h"
 #include "../MovieTicketLibrary/SeatsUtil.h"
+#include "../MovieTicketLibrary/SeatValues.h"
 #include "Seats.h"
 
-Seats seat[10][10]{};
+Movie seat[10][10]{};
 
 void showMainMenu() {
     system("cls");
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            seat[i][j].setRow(i + 1);
-            if (i % 2 == 0)
-                seat[i][j].reserve();  // Reserve if even row
-        }
-    }
 
     std::cout << "Choose what you want to do!\n";
     std::cout << "[1] View movie genres\n";
@@ -87,6 +81,9 @@ void RomanceMovies() {
     std::cout << "La La Land [3]\n";
     std::cout << "Go back [4]\n";
 
+    Movie TheNotebook;
+    assignSeatValues(TheNotebook);
+
     int choice;
     std::cin >> choice;
     switch (choice) {
@@ -108,7 +105,7 @@ void ViewGenres() {
     system("cls");
     std::cout << "Choose a genre:\n";
     std::cout << "Action [1]\n";
-    std::cout << "Animation [2]\n";  // Fixed spelling
+    std::cout << "Animation [2]\n";
     std::cout << "Romance [3]\n";
     std::cout << "Go back [4]\n";
 

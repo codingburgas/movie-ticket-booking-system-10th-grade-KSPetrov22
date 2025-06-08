@@ -2,4 +2,4 @@
 #include <iostream>
 #include "../MovieTicketLibrary/SeatsUtil.h"
 
-void seatsView(Seats seat[10][10]);
+void seatsView(Movie seat[10][10]);

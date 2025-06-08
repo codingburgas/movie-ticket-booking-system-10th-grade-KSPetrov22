@@ -1,29 +1,21 @@
 #pragma once
 #include <iostream>
 
-class Seats {
+class Movie {
 private:
-    int row;
-    bool isReserved;
+    int seatNum[100];
+    bool isReserved[100];
 
 public:
-    Seats() : row(0), isReserved(false) {}
-    Seats(int r, bool reserved) : row(r), isReserved(reserved) {}
 
-    int getRow(){
-        return row;
-    }
     bool getIsReserved(){
         return isReserved; 
     }
 
-    void reserve() {
-        isReserved = true; 
-    }
-    void setRow(int r){ 
-        row = r; 
+    void reserve(int index) {
+        isReserved[index] = true;
     }
 };
 
-void showSeatsByIndex(Seats seats[10][10], int index);
-void reserveSeat(Seats seats[10][10], int column, int row);
+void showSeatsByIndex(Movie seats[10][10], int index);
+void reserveSeat(Movie seats[10][10], int column, int row);
