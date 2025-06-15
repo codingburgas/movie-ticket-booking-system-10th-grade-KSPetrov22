@@ -3,7 +3,7 @@
 #include "../MovieTicketLibrary/SeatValues.h"
 #include "Seats.h"
 
-Movie seat[10][10]{};
+Movie seat;
 
 void showMainMenu() {
     system("cls");
@@ -81,17 +81,17 @@ void RomanceMovies() {
     std::cout << "La La Land [3]\n";
     std::cout << "Go back [4]\n";
 
-    Movie TheNotebook;
-    assignSeatValues(TheNotebook);
+    Movie The_Notebook;
+    assignSeatValues(The_Notebook);
 
     int choice;
     std::cin >> choice;
     switch (choice) {
     case 1:
+        seatsView(The_Notebook);
+        break;
     case 2:
     case 3:
-        seatsView(seat);
-        break;
     case 4:
         ViewGenres();
         break;

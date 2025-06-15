@@ -8,8 +8,15 @@ private:
 
 public:
 
-    bool getIsReserved(){
-        return isReserved; 
+    Movie() {
+        for (int i = 0; i < 100; ++i) {
+            seatNum[i] = i + 1;
+            isReserved[i] = false;
+        }
+    }
+
+    bool getIsReserved(int index) {
+        return isReserved[index];
     }
 
     void reserve(int index) {
@@ -17,5 +24,5 @@ public:
     }
 };
 
-void showSeatsByIndex(Movie seats[10][10], int index);
-void reserveSeat(Movie seats[10][10], int column, int row);
+void showSeatsByIndex(Movie seats, int index);
+void reserveSeat(Movie seats, int column, int row);
